@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Fables</string>
+    <string name="SplashLogo">\nLogo application</string>
+    <string name="aide">Aide</string>
+    <string name="search">Search</string>
+    <string name="pas_de_compte_inscrivez_vous_ici">Pas de compte? Inscrivez-vous ici</string>
+    <string name="connexion">Connexion</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="email">Email</string>
+    <string name="confirmer_le_mot_de_passe">Confirmer le mot de passe</string>
+    <string name="tel">Tel</string>
+    <string name="inscription">Inscription</string>
+    <string name="deja_membre_connectez_vous_ici">Deja membre? Connectez-vous ici</string>
+    <string name="logout">Logout</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="votre_nom">Votre nom</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Logo de l'application -->
+    <ImageView
+        android:id="@+id/splash_logo"
+        android:layout_width="193dp"
+        android:layout_height="37dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/SplashLogo"
+        android:src="@drawable/logo" />
+
+    <!-- Barre de chargement -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/splash_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:progress="0"
+        android:max="100"
+        android:progressTint="@color/primary" />
+</RelativeLayout>
