@@ -46,7 +46,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     progressBar.setProgress(progress[0]);
                     handler.postDelayed(this, 1000); // Refaire après 1s
                 } else {
-                    // Passer à l'activité de connexion après la fin de la progression
+                    // Passer à l'activité principale après la fin de la progression
                     startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
                     finish();
                 }

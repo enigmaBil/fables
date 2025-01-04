@@ -11,8 +11,13 @@
     <string name="tel">Tel</string>
     <string name="inscription">Inscription</string>
     <string name="deja_membre_connectez_vous_ici">Deja membre? Connectez-vous ici</string>
-    <string name="logout">Logout</string>
-    <string name="register">Register</string>
-    <string name="login">Login</string>
+    <string name="login">Se connecter</string>
     <string name="votre_nom">Votre nom</string>
+    <string name="logout">Deconnexion</string>
+    <string name="register">S\'inscrire</string>
+    <string name="add_item">ajouter une fable</string>
+    <string name="title">Titre</string>
+    <string name="content">Contenu</string>
+    <string name="author">Auteur</string>
+    <string name="valider">Valider</string>
 </resources>

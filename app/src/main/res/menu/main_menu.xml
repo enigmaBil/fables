@@ -11,11 +11,13 @@
         app:actionViewClass="android.widget.SearchView" />
     <item
         android:id="@+id/menu_login"
+        app:showAsAction="always"
         android:title="@string/login"
         android:icon="@drawable/ic_login"
         />
     <item
         android:id="@+id/menu_register"
+        app:showAsAction="always"
         android:title="@string/register"
         android:icon="@drawable/ic_register" />
     <item

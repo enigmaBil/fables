@@ -7,9 +7,11 @@ import com.example.fables.data.response.LoginResponse;
 
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface FableApiService {
@@ -22,4 +24,8 @@ public interface FableApiService {
 
     @GET("fables")
     Call<List<Fable>> getFables();
+
+    @POST("fables")
+    Call<ResponseBody> addFable(@Header("Authorization") String token, @Body Fable fable);
+
 }

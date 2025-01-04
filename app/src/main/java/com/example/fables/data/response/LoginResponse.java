@@ -1,8 +1,13 @@
 package com.example.fables.data.response;
 
+import com.google.gson.annotations.SerializedName;
+
 public class LoginResponse {
 
+    @SerializedName("access_token")
     private String accessToken;
+
+    @SerializedName("refresh_token")
     private String refreshToken;
 
     public LoginResponse(String accessToken, String refreshToken) {

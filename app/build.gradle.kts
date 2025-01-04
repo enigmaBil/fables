@@ -48,4 +48,5 @@ dependencies {
     // Retrofit et Gson
     implementation(libs.retrofit2)
     implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
 }

@@ -15,12 +15,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.fables.MainActivity;
 import com.example.fables.R;
 import com.example.fables.data.api.ApiClient;
 import com.example.fables.data.api.FableApiService;
 import com.example.fables.data.request.RegisterRequest;
 import com.example.fables.data.response.LoginResponse;
 import com.example.fables.databinding.ActivityRegisterBinding;
+import com.example.fables.ui.spalsh.SplashScreenActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -59,11 +61,11 @@ public class RegisterActivity extends AppCompatActivity {
             String name = etName.getText().toString().trim();
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
-            String phone = etPhone.getText().toString().trim();
+            String phoneNumber = etPhone.getText().toString().trim();
             String confirmPassword = etConfirmPassword.getText().toString().trim();
             String role = "USER";
 
-            if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || phone.isEmpty()) {
+            if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || phoneNumber.isEmpty()) {
                 Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -73,13 +75,14 @@ public class RegisterActivity extends AppCompatActivity {
             }
 
             // Appeler l'API pour l'inscription
-            RegisterRequest request = new RegisterRequest(name, email, phone, password, role);
+            RegisterRequest request = new RegisterRequest(name, email, phoneNumber, password, role);
             FableApiService apiService = ApiClient.getRetrofitInstance().create(FableApiService.class);
             apiService.register(request).enqueue(new Callback<LoginResponse>() {
                 @Override
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                     if (response.isSuccessful() && response.body() != null) {
                         Toast.makeText(RegisterActivity.this, "Inscription réussie", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         finish();
                     } else {
                         Log.i(request.getName(), "onResponse: ");

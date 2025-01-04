@@ -3,15 +3,15 @@ package com.example.fables.data.request;
 public class RegisterRequest {
     private String name;
     private String email;
-    private String phone;
+    private String phoneNumber;
     private String password;
     private final String role;
 
 
-    public RegisterRequest(String name, String email, String phone, String password, String role) {
+    public RegisterRequest(String name, String email, String phoneNumber, String password, String role) {
         this.name = name;
         this.email = email;
-        this.phone = phone;
+        this.phoneNumber = phoneNumber;
         this.password = password;
         this.role = role;
     }
@@ -41,10 +41,10 @@ public class RegisterRequest {
     }
 
     public String getPhone() {
-        return phone;
+        return phoneNumber;
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.phoneNumber = phone;
     }
 }
