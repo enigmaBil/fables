@@ -1,5 +1,6 @@
 package com.example.fables.ui;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.fables.MainActivity;
 import com.example.fables.R;
 import com.example.fables.data.api.ApiClient;
 import com.example.fables.data.api.FableApiService;
@@ -62,7 +64,7 @@ public class AddFableActivity extends AppCompatActivity {
     }
     private void addFable(Fable fable) {
         String token = getAccessToken(); // Récupérer le token depuis les SharedPreferences ou autre méthode
-
+        System.out.println("Token : " + token);
         FableApiService apiService = ApiClient.getRetrofitInstance().create(FableApiService.class);
 
         Call<ResponseBody> call = apiService.addFable("Bearer " + token, fable);
@@ -72,7 +74,8 @@ public class AddFableActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(AddFableActivity.this, "Fable ajoutée avec succès", Toast.LENGTH_SHORT).show();
-                    finish(); // Retour à l'activité précédente
+                    startActivity(new Intent(AddFableActivity.this, MainActivity.class));
+                    finish();
                 } else {
                     Toast.makeText(AddFableActivity.this, "Erreur lors de l'ajout de la fable", Toast.LENGTH_SHORT).show();
                 }
@@ -87,6 +90,6 @@ public class AddFableActivity extends AppCompatActivity {
     // Méthode pour récupérer le token d'accès
     private String getAccessToken() {
         SharedPreferences prefs = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
-        return prefs.getString("access_token", null);
+        return prefs.getString("jwt_token", null);
     }
 }
